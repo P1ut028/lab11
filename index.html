@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тістечка і Тортики</title>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    header span {
+      color: crimson;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card .info {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin: 0;
+      color: #666;
+    }
+
+
+    .sidebar {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sidebar h4 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .sidebar input[type=range] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      background: #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+
+
+    .sidebar input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #666;
+      cursor: pointer;
+    }
+
+    .sidebar button {
+      background: #f2f2f2;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .sidebar button:hover {
+      background: #ddd;
+    }
+
+    footer {
+      text-align: left;
+      padding: 15px 20px;
+      font-size: 14px;
+      background: #f0f0f0;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    @media (max-width: 729px) {
+      .container {
+        grid-template-columns: 1fr;
+        padding: 12px;
+      }
+
+      .sidebar {
+        order: -1;
+        width: 93%;
+        margin-bottom: 16px;
+      }
+
+      .cards {
+        display: flex !important;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .sidebar input[type=range] {
+        width: 100%;
+      }
+      .sidebar button {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+    }
+    @media (min-width: 730px) and (max-width: 1199px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        order: -1;
+        width: 94%;
+        margin-bottom: 20px;
+      }
+      .cards {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px;
+      }
+
+      .card {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>Тістечка <span>І</span> Тортики</header>
+
+  <div class="container">
+    <div class="cards">
+      <div class="card">
+        <img src="https://content.fora.ua/sku/ecommerce/70/480x480fora/703602_480x480fora_20cf0167-369f-97eb-4f45-ec225419a0de.png" alt="Торт Roshen «Київський»">
+        <div class="info">
+          <h3>Торт «Київський»</h3>
+          <p>Калорії у порції 265 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://content.fora.ua/sku/ecommerce/99/480x480fora/994500_480x480fora_e7562767-867c-4228-1a22-9674962f8a02.png" alt="Тістечко Nonpareil Fusion nuts мікс">
+        <div class="info">
+          <h3>Тістечко Nonpareil Fusion nuts мікс</h3>
+          <p>Калорії у порції 517 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://content.fora.ua/sku/ecommerce/80/480x480fora/808214_480x480fora_b28413fb-9a28-7165-8648-c96e6ed8e809.png" alt="Рулет Roshen «Золотий ключик»">
+        <div class="info">
+          <h3>Рулет Roshen «Золотий ключик»</h3>
+          <p>Калорії у порції 438 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://content.fora.ua/sku/ecommerce/72/480x480fora/724256_480x480fora_1efb5b1b-1421-681f-ebd6-23ba36ec23b7.png" alt="Торт БКК «Празький» з вишнею">
+        <div class="info">
+          <h3>Торт «Празький» з вишнею</h3>
+          <p>Калорії у порції 550 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://content.fora.ua/sku/ecommerce/76/480x480fora/764213_480x480fora_ec35e5e6-ccb6-833a-c31d-66d0cadbb90a.png" alt="Торт Tarta «Медовик»">
+        <div class="info">
+          <h3>Торт Tarta Медовик</h3>
+          <p>Калорії у порції 284 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://content.fora.ua/sku/ecommerce/87/480x480fora/874625_480x480fora_0e8c9dd5-ed19-6aa3-b54e-b2c30c6b3da6.png" alt="Торт Nonpareil «Пінчер» з вишнею">
+        <div class="info">
+          <h3>Торт Nonpareil «Пінчер» з вишнею</h3>
+          <p>Калорії у порції 422 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://content.fora.ua/sku/ecommerce/7/480x480fora/71769_480x480fora_e2117ddc-4936-3e6b-ffa5-09d6e5bffb84.png" alt="Торт Roshen «Золотий Ключик»">
+        <div class="info">
+          <h3>Торт: Золотий Ключик</h3>
+          <p>Калорії у порції 365 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://content.fora.ua/sku/ecommerce/87/480x480fora/874626_480x480fora_3dba0b4f-64e2-96ff-f0b3-9132617b053a.png" alt="Торт Nonpareil «Наполеон» з солоною карамеллю">
+        <div class="info">
+          <h3>Тістечко: Торт «Наполеон»</h3>
+          <p>Калорії у порції 306 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://content.fora.ua/sku/ecommerce/82/480x480fora/823753_480x480fora_e20b514a-6e65-f9cd-8966-427c7b2fc38f.png" alt="Тістечка Tarta горішки зі згущеним молоком ">
+        <div class="info">
+          <h3>Тістечко: Тістечка Tarta </h3>
+          <p>Калорії у порції 462 кКал</p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <h4>Калорії у порції</h4>
+      <input type="range" min="0" max="400" value="200">
+      <p>Від 0 до 400 кКал</p>
+      <button>Пиріг</button>
+      <button>Рулет</button>
+      <button>Сирники</button>
+      <button>Тістечко</button>
+      <button>Торт</button>
+      <button>Скинути фільтр</button>
+    </aside>
+  </div>
+
+  <footer>
+    Контакти: <a href="mailto:solodke@kubg.edu.ua">tortik@smakota.ua</a><br>
+    © 2025 Smakota
+  </footer>
+</body>
+</html>
